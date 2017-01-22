@@ -1,0 +1,57 @@
+#endpoints:
+#  restart:
+#    enabled: true
+#  shutdown:
+#    enabled: true
+#  health:
+#    sensitive: false
+#logging:
+#  level:
+#    ROOT: INFO
+#    org.springframework.web: DEBUG
+#
+#server.port: 8080
+#
+#---
+#spring:
+#  profiles: default
+#  consul:
+#    port: 8500
+#    host: localhost
+#    enabled: true
+#    discovery:
+#      enabled: true
+#      register: true
+#      service-name: config-server
+#      hostname: localhost
+#zuul:
+#  routes:
+#    baidu:
+#      path: /baidu/**
+#      url: http://www.baidu.com
+#    HelloServer:
+#      path: /cc/**
+#    static:
+#      path: /static/**
+#
+#---
+#spring:
+#  profiles: dev
+#  consul:
+#    port: 8500
+#    host: localhost
+#    enabled: true
+#    discovery:
+#      enabled: true
+#      register: true
+#      service-name: config-server
+#      hostname: localhost
+#zuul:
+#  routes:
+#    baidu:
+#      path: /baidu/**
+#      url: http://www.baidu.com
+#    HelloServer:
+#      path: /cc/**
+#    static:
+#      path: /static/**

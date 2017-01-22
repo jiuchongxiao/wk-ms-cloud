@@ -1,0 +1,24 @@
+server:
+  port: 9999
+
+logging:
+  level:
+    org.springframework.cloud: 'INFO'
+#default配置
+spring:
+#指定git仓库
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://bogon/root/config-git.git
+#将配置管理服务注册到consul集群
+  consul:
+    port: 8500
+    host: localhost
+    enabled: true
+    discovery:
+      enabled: true
+      register: true
+      service-name: config-server
+      hostname: localhost

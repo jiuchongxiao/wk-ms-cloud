@@ -1,0 +1,16 @@
+#spring:
+#  application:
+#    name: helloserver
+#  consul:
+#    port: 8500
+#    host: localhost
+#    enabled: true
+#    discovery:
+#      enabled: true
+#      register: true
+#      service-name: HelloServer
+#      hostname: localhost
+#
+#server:
+#  port: 7111
+#

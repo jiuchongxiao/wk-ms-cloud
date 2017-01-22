@@ -1,0 +1,4 @@
+#!/bin/bash
+# Consul v0.7.2 
+# https://www.consul.io/
+consul agent -server -bootstrap -data-dir ./data -ui-dir ./ui -advertise 192.168.3.106

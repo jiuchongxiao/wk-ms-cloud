@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.cc.test</groupId>
+	<artifactId>feign-hello-server</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>feign-hello-server</name>
+	<description>Demo project for Spring Cloud</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Camden.SR4</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<springfox-version>2.6.1</springfox-version>
+	</properties>
+
+	<dependencies>
+		<!--自定义的依赖-->
+		<!-- https://start.spring.io -->
+
+
+
+		<!--一下为spring-cloud固定的一些依赖,一般情况下不要变更-->
+		<!--swagger扫包自动生成文档-->
+		<!--http://localhost:7111/swagger-ui.html-->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox-version}</version>
+		</dependency>
+		<!--spring-mvc等依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!--spring-boot监控通知依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!--服务间调用客户端feign依赖-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
+		</dependency>
+		<!--服务发现注册consul-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
+		</dependency>
+		<!--配置管理-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<!--spring-boot测试依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!--swagger自动生成代码依赖-->
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-codegen-cli</artifactId>
+			<version>2.2.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>pl.project13.maven</groupId>-->
+				<!--<artifactId>git-commit-id-plugin</artifactId>-->
+			<!--</plugin>-->
+			<plugin>
+				<!--skip deploy (this is just a test module) -->
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>releases</id>
+			<url>http://58.83.202.110:8081/nexus/content/repositories/releases</url>
+		</repository>
+		<repository>
+			<id>snapshots</id>
+			<url>http://58.83.202.110:8081/nexus/content/repositories/snapshots</url>
+		</repository>
+		<repository>
+			<id>nexus</id>
+			<name>Team Wangku Repository</name>
+			<url>http://192.168.1.39:8081/nexus/content/groups/wangku/</url>
+		</repository>
+	</repositories>
+</project>

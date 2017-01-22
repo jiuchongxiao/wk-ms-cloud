@@ -1,0 +1,23 @@
+#spring:
+#  application:
+#    name: helloclient
+#  consul:
+#    port: 8500
+#    host: localhost
+#    enabled: true
+#    discovery:
+#      enabled: true
+#      register: true
+#      service-name: HelloClient
+#      hostname: localhost
+#
+#server:
+#  port: 7211
+#
+#endpoints:
+#  restart:
+#    enabled: true
+#  shutdown:
+#    enabled: true
+#  health:
+#    sensitive: false
